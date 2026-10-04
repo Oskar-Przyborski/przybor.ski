@@ -1,17 +1,89 @@
 ---
-
+import { Picture } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import profileImage from "../assets/profile.jpg";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Oskar Przyborski">
+    <Picture
+        src={profileImage}
+        alt="Ja stojący na Ścieżce w Obłokach na tle Dolni Moravy"
+        loading="eager"
+        formats={["avif", "webp"]}
+        layout="fixed"
+        width={196}
+        height={196}
+    />
+    <h1>Oskar Przyborski</h1>
+    <p>
+        Jestem programistą fullstack. Tworzę aplikacje webowe i mobilne od A do
+        Z — od architektury backendowej po gotowy, schludny interfejs.
+    </p>
+    <p>
+        Potrafię stworzyć szyte na miarę narzędzia usprawniające sprzedaż,
+        logistykę i pracę zespołów.
+    </p>
+    <p>
+        Stworzyłem i rozwijam aplikację mobilną{" "}
+        <a href="https://skarbnik.app" target="_blank" rel="noopener">
+            Skarbnik
+        </a>{" "}
+        — narzędzie ułatwiające pracę ponad 2000 skarbników klasowych w Polsce.
+    </p>
+    <p>
+        Mieszkam w Wągrowcu i obecnie przygotowuję się do matury jako technik
+        programista. W wolnym czasie spaceruję, czytam książki, gram na gitarze
+        i słucham Arctic&nbsp;Monkeys.
+    </p>
+    <p>Znajdziesz mnie tutaj:</p>
+    <ul>
+        <li>
+            <a href="mailto:oskar@przybor.ski">oskar@przybor.ski</a>,
+        </li>
+        <li>
+            <a href="https://www.facebook.com/profile.php?id=100013629154403">
+                Facebook
+            </a>
+            ,
+        </li>
+        <li>
+            <a href="https://github.com/Oskar-Przyborski">GitHub</a>.
+        </li>
+    </ul>
+    <footer>04 paź 2026</footer>
+</Layout>
+
+<style>
+    picture {
+        margin-block: 2rem;
+
+        img {
+            object-fit: cover;
+            object-position: 30% 0%;
+
+            border-radius: var(--radius-small);
+        }
+    }
+
+    h1 {
+        margin-block: 2rem 1.5rem;
+        font: var(--typescale-headline-large);
+    }
+
+    p {
+        margin-block: 1rem;
+    }
+
+    ul {
+        margin-block: 1rem;
+        list-style-type: square;
+    }
+
+    footer {
+        margin-block: 2rem;
+
+        font: var(--typescale-label-large);
+        color: var(--color-on-surface-variant);
+        text-align: end;
+    }
+</style>

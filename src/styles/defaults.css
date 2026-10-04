@@ -1,0 +1,11 @@
+* {
+    font-family: var(--font-primary);
+}
+
+p {
+    font: var(--typescale-body-large);
+}
+
+a {
+    color: var(--color-primary);
+}
